@@ -92,24 +92,8 @@ def insert_mock_data(db_path: str) -> None:
             user_register.create_user(user2)
             user_register.create_user(user3)
             user_register.create_user(user4)    
-            user_register.create_user(user_admin)
+            user_register.create_admin(user_admin)
 
-            # Get the role IDs for "admin" and "user"
-            cursor.execute("SELECT id FROM roles WHERE name = 'admin'")
-            admin_role_id = cursor.fetchone()[0]
-            
-            cursor.execute("SELECT id FROM roles WHERE name = 'user'")
-            user_role_id = cursor.fetchone()[0]
-
-            cursor.execute("SELECT uuid FROM users WHERE name = ?", (user_admin.name,))
-            user_admin_uuid = cursor.fetchone()[0]
-            cursor.execute("INSERT INTO user_roles (user_uuid, role_id) VALUES (?, ?)", (user_admin_uuid, admin_role_id))
-
-            for user in [user1, user2, user3, user4]:
-                cursor.execute("SELECT uuid FROM users WHERE name = ?", (user.name,))
-                user_uuid = cursor.fetchone()[0]
-                cursor.execute("INSERT INTO user_roles (user_uuid, role_id) VALUES (?, ?)", (user_uuid, user_role_id))
-      
             conn.commit()
     except sqlite3.Error as e:
         logging.error(f"An error occurred while inserting mock data: {e}")
