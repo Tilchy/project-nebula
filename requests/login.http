@@ -2,12 +2,12 @@ POST http://localhost:8000/login
 Content-Type: application/json
 
 {
-    "email": "tilen@test.com", 
+    "email": "admin@test.com", 
     "password": "password123"
 }
 
 #{
-#    "email": "admin@test.com", 
+#    "email": "tilen@test.com", 
 #    "password": "password123"
 #}
 

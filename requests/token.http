@@ -1,4 +1,9 @@
-### Verify token
+### Define Variables
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiOTY4MjQ4ZmYy00N2U3LWIzOTgtYjQwYWJmNTZiNDc0IiwiZXhwIjoxNzI5MjQyMzc3fQ.8_t0AT-SzapJyFdQXuj_EFHKCvDPUNmUuM81gcxyKnA
+@refresh_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiOTY4MjQ4ZmMtMTUyYy00N2U3LWIzOTgtYjQwYWJmNTZiNDc0IiwiZXhwIjoxNzI5MzI4NDU3fQ.jW3cjosacLdoWu20AyQLDd1SYXQvAed164o0L0OAcWk
 
+### Verify Token
+POST http://localhost:8000/token/verify?token={{token}}
 
-### Generate Access Token from Refresh token
+### Generate Access Token from Refresh Token
+POST http://localhost:8000/token/refresh?refresh_token={{refresh_token}}

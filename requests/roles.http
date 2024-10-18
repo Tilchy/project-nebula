@@ -1,0 +1,26 @@
+@access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMjE2MTk3MTAtN2UyMy00NTM4LWJjYjUtN2UxZTExOTM3NjNlIiwiZXhwIjoxNzI5MjQ3NzMzfQ.Ojvw1VOikS5xDwjRuFSGLxjcrC0EEfuV5h5JLeIYNpg
+
+GET http://localhost:8000/user/roles
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+
+
+### 
+
+POST http://localhost:8000/user/role
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+
+{
+  "name": "new_role_1"
+}
+
+### 
+
+DELETE http://localhost:8000/user/role
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+
+{
+  "id": 2
+}

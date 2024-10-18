@@ -1,6 +1,19 @@
-GET http://localhost:8000/user/roles
+@access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMjE2MTk3MTAtN2UyMy00NTM4LWJjYjUtN2UxZTExOTM3NjNlIiwiZXhwIjoxNzI5MjQ4NzExfQ.Dh429PHUryHifeNtt5dS8ivbK2mcJteJ7fXYfPK6IxY
+
+GET http://localhost:8000/users
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmJlMTNmMjgtNjBmZC00YmY4LTkwNzgtNzkyYWNiZDIxMTgyIiwiZXhwIjoxNzI5MjMwNzQ3fQ.w7Y5i76ADpJjp3iYEPL3Srftua08xLo5JLETkDSBNfI
+Authorization: Bearer {{access_token}}
 
 
 ### 
+
+GET http://localhost:8000/user/12e5bfed-888bb-bf41-14c9e19123ee
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+
+
+### 
+
+DELETE http://localhost:8000/user/af874b60df0-8c28-dea77939c737
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
